@@ -7,7 +7,7 @@
 ---
 Run code:
 
-```make {algorithm-name}-{programm-language}```
+```make {algorithm-name}-{program-language}```
 
 Example:
 ```make queue-php``` or ```make queue-go```
