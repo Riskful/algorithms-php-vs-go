@@ -45,10 +45,11 @@ func (q Queue) peek() int {
 }
 
 func (q *Queue) pop() int {
-	element := q.values[0]
-	q.values = q.values[1:]
+	var value int
 
-	return element
+	value, q.values = q.values[0], q.values[1:]
+
+	return value
 }
 
 func main() {

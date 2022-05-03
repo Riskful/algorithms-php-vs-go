@@ -1,13 +1,10 @@
 <?php
 declare(strict_types=1);
 
-class Queue
+class Stack
 {
     private int $capacity = 0;
-
-    /**
-     * @var int[]
-     */
+    
     private array $values = [];
 
     /**
@@ -27,7 +24,7 @@ class Queue
     }
 
     /**
-     * Clear queue.
+     * Clear stack.
      */
     public function clear(): void
     {
@@ -35,15 +32,15 @@ class Queue
     }
 
     /**
-     * Returns a shallow copy of the queue.
+     * Returns a shallow copy of the stack.
      */
-    public function copy(): Queue
+    public function copy(): Stack
     {
         return clone $this;
     }
 
     /**
-     * Returns whether the queue is empty.
+     * Returns whether the stack is empty.
      */
     public function isEmpty(): bool
     {
@@ -51,7 +48,7 @@ class Queue
     }
 
     /**
-     * Returns the value at the front of the queue.
+     * Returns the value at the front of the stack.
      */
     public function peek(): int
     {
@@ -59,7 +56,7 @@ class Queue
     }
 
     /**
-     * Removes and returns the value at the front of the queue.
+     * Removes and returns the value.
      */
     public function pop(): int
     {
@@ -67,7 +64,7 @@ class Queue
     }
 
     /**
-     * Pushes values into the queue.
+     * Pushes values into the stack.
      */
     public function push(int $value): void
     {
@@ -77,7 +74,9 @@ class Queue
             );
         }
 
-        $this->values[] = $value;
+        $values = array_reverse($this->values);
+        $values[] = $value;
+        $this->values = array_reverse($values);
     }
 
     /**
