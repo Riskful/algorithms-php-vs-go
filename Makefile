@@ -15,3 +15,9 @@ stack-php:
 	docker build -t algorithm-stack-php stack/php/.
 	clear
 	docker run algorithm-stack-php
+
+.PHONY: stack-go
+stack-go:
+	docker build -t algorithm-stack-go stack/go/.
+	clear
+	docker run algorithm-stack-go
