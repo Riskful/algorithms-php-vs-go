@@ -1,8 +1,8 @@
 package main
 
 import (
-	"errors"
 	"fmt"
+	"log"
 )
 
 type Stack struct {
@@ -10,46 +10,49 @@ type Stack struct {
 	values   []int
 }
 
-func (s *Stack) allocate(capacity int) {
+func (s *Stack) Allocate(capacity int) {
 	s.capacity = capacity
 }
 
-func (s *Stack) getCapacity() int {
+func (s Stack) GetCapacity() int {
 	return s.capacity
 }
 
-func (s *Stack) clear() {
+func (s *Stack) Clear() {
 	s.values = nil
 }
 
-func (s *Stack) isEmpty() bool {
+func (s Stack) IsEmpty() bool {
 	return len(s.values) < 1
 }
 
-func (s Stack) copy() Stack {
+func (s Stack) Copy() Stack {
 	clone := s
 
 	return clone
 }
 
-func (s *Stack) push(value int) {
-	if len(s.values) == 0 {
-		errors.Unwrap(fmt.Errorf("Not enough memory. Capacity: %d", s.capacity))
-	}
-
+func (s *Stack) Push(value int) {
+	s.validateCapacity()
 	s.values = append(s.values, 0)
 	copy(s.values[1:], s.values)
 	s.values[0] = value
 }
 
-func (s *Stack) peek() int {
+func (s *Stack) Peek() int {
 	return s.values[0]
 }
 
-func (s *Stack) pop() int {
+func (s *Stack) Pop() int {
 	var value int
 
 	value, s.values = s.values[0], s.values[1:]
 
 	return value
+}
+
+func (s Stack) validateCapacity() {
+	if len(s.values) > s.capacity {
+		log.Fatal(fmt.Sprintf("Not enough memory. Capacity: %d", s.capacity))
+	}
 }

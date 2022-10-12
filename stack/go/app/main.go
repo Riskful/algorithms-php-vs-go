@@ -16,10 +16,10 @@ func main() {
 	fmt.Println("----------- Start -----------")
 	fmt.Printf("A: %d; B: %d; C: %d;\n\r", valueA, valueB, valueC)
 
-	stack.allocate(3)
-	fmt.Printf("Set allocate: %d\n\r", stack.getCapacity())
+	stack.Allocate(3)
+	fmt.Printf("Set allocate: %d\n\r", stack.GetCapacity())
 
-	if stack.isEmpty() {
+	if stack.IsEmpty() {
 		isEmpty = "true"
 	} else {
 		isEmpty = "false"
@@ -28,17 +28,17 @@ func main() {
 	fmt.Printf("Stack is empty: %s\n\r", isEmpty)
 
 	fmt.Printf("Add value A: %d\n\r", valueA)
-	stack.push(valueA)
+	stack.Push(valueA)
 
 	fmt.Printf("Add value B: %d\n\r", valueB)
-	stack.push(valueB)
+	stack.Push(valueB)
 
 	fmt.Printf("Add value C: %d\n\r", valueC)
-	stack.push(valueC)
+	stack.Push(valueC)
 
-	fmt.Printf("Pop value from stack: %d\n\r", stack.pop())
-	fmt.Printf("Pop value from stack: %d\n\r", stack.pop())
-	fmt.Printf("Pop value from stack: %d\n\r", stack.pop())
+	fmt.Printf("Pop value from stack: %d\n\r", stack.Pop())
+	fmt.Printf("Pop value from stack: %d\n\r", stack.Pop())
+	fmt.Printf("Pop value from stack: %d\n\r", stack.Pop())
 
 	fmt.Println("------------ End ------------")
 }
