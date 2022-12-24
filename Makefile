@@ -23,3 +23,8 @@ linked-list-php:
 	docker build -t algorithm-linked-list-php linked-list/php/.
 	clear
 	docker run algorithm-linked-list-php
+
+doubly-linked-list-php:
+	docker build -t algorithm-doubly-linked-list-php doubly-linked-list/php/.
+	clear
+	docker run algorithm-doubly-linked-list-php

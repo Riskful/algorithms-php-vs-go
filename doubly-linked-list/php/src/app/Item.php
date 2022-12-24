@@ -5,6 +5,8 @@ class Item
 {
     private ?Item $next = null;
 
+    private ?Item $prev = null;
+
     public function __construct(private readonly string $value)
     {
     }
@@ -14,9 +16,23 @@ class Item
         return $this->next;
     }
 
-    public function setNext(?Item $next): void
+    public function setNext(?Item $next): self
     {
         $this->next = $next;
+
+        return $this;
+    }
+
+    public function getPrev(): ?Item
+    {
+        return $this->prev;
+    }
+
+    public function setPrev(?Item $prev): self
+    {
+        $this->prev = $prev;
+
+        return $this;
     }
 
     public function getValue(): string

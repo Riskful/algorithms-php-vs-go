@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class LinkedList
+class DoublyLinkedList
 {
     /**
      * @var Item[]
@@ -12,8 +12,9 @@ class LinkedList
 
     public function addItem(Item $item): void
     {
-        $this->items[] = $item;
         $this->last?->setNext($item);
+        $item->setPrev($this->last);
+        $this->items[] = $item;
         $this->last = $item;
     }
 

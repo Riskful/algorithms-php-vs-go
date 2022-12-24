@@ -14,8 +14,8 @@ Example:
 
 * [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 * [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
-* Linked List
-* Doubly Linked List
+* [Linked List](https://en.wikipedia.org/wiki/Linked_list)
+* [Doubly Linked List](https://en.wikipedia.org/wiki/Doubly_linked_list)
 * Hash Table
 * Heap - max and min heap versions
 * Priority Queue
