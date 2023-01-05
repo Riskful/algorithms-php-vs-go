@@ -3,20 +3,17 @@ require_once 'app/Item.php';
 require_once 'app/LinkedList.php';
 
 echo "----------- Start -----------\n\r";
+echo "\n\r";
 
 $linkedList = new LinkedList;
+$linkedList->addItem("foo");
+echo "Add item 'foo'\n\r";
 
-$foo = new Item('foo');
-$linkedList->addItem($foo);
-echo sprintf("Add item '%s' to linked list\n\r", $foo->getValue());
+$linkedList->addItem('bar');
+echo "Add item 'bar'\n\r";
 
-$bar = new Item('bar');
-$linkedList->addItem($bar);
-echo sprintf("Add item '%s' to linked list\n\r", $bar->getValue());
-
-$baz = new Item('baz');
-$linkedList->addItem($baz);
-echo sprintf("Add item '%s' to linked list\n\r", $baz->getValue());
+$linkedList->addItem("baz");
+echo "Add item 'baz'\n\r";
 echo "---------------------------\n\r";
 
 foreach ($linkedList->getItems() as $item) {
@@ -24,6 +21,8 @@ foreach ($linkedList->getItems() as $item) {
     echo $item->getNext() ? ' -> ' : ' -> null';
 }
 
+echo "\n\r";
+echo sprintf("Length linked list: %d", $linkedList->getLength());
 echo "\n\r";
 echo "\n\r";
 echo "----------- End -----------\n\r";
