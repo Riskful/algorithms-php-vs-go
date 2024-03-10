@@ -24,6 +24,11 @@ linked-list-php:
 	clear
 	docker run algorithm-linked-list-php
 
+linked-list-go:
+	docker build -t algorithm-linked-list-go linked-list/go/.
+	clear
+	docker run algorithm-linked-list-go
+
 doubly-linked-list-php:
 	docker build -t algorithm-doubly-linked-list-php doubly-linked-list/php/.
 	clear
